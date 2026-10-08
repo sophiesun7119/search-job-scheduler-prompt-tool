@@ -2,6 +2,17 @@
 
 Use one spreadsheet and three plain header-based tabs. Users may rename tabs; embed the selected names and any header mapping in both generated prompts. The two business tabs are Companies and Open Jobs; Runs holds small operational receipts so the tasks do not depend on chat memory. No formulas or special plugins are required by this schema.
 
+## One-time setup
+
+This section is for the setup/generation assistant, not the recurring tasks. Only perform it when the user requests setup with a supplied Sheet; explicit read-only or generate-only instructions take precedence.
+
+1. Read spreadsheet metadata to resolve exact tab names/IDs and inspect existing target headers and cell constraints. A blank A1 is not proof of an empty tab: use bounded reads across the allocated grid (or a reliable used-range tool) to establish absence of values/formulas before initializing an existing tab. If that cannot be established, stop that tab's initialization and explain the uncertainty.
+2. Create missing target tabs using the chosen names; do not rename or delete unrelated tabs, including Sheet1. Initialize only new or verified-empty tabs with the exact header lines below. Use plain ranges, bold/light-gray wrapped headers, freeze row 1 and reasonable column widths. No sample companies, jobs or fake receipts in a user's new working Sheet.
+3. For populated tabs, reuse unique required headers in any column order; preserve extra columns, formulas, formats and data. Record explicit header aliases in both prompts. Missing, duplicated or ambiguous required headers require a targeted mapping/migration question; do not guess, overwrite or reorder existing columns.
+4. Read back all target headers and metadata before declaring setup ready. Record chosen tab names, aliases and readiness in private settings. On a repeated request, compatible tabs are reused without writes. After an uncertain write outcome, reread before retrying so tabs/headers are not duplicated. Do not change sharing or access permissions.
+
+Keep this setup procedure out of generated recurring prompts. Embed the Headers and subsequent runtime sections instead. Scheduled runs validate the structure and report any later mismatch; they do not repeatedly initialize or migrate it.
+
 ## Headers
 
 Copy each tab-separated line into cell A1 of the corresponding empty tab. Do not paste it over existing data.

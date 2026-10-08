@@ -1,6 +1,6 @@
 # Acceptance cases
 
-These are reproducible review scenarios, not a claim that any live scheduler has been tested. Use fictional Sheet IDs and example.com fixtures. Keep actual outputs/results under ignored local/ and output/. Inspect meaning and behavior, not exact wording. Generation requires no live search or Sheet writes.
+These are reproducible review scenarios, not a claim that any live scheduler has been tested. Use fictional Sheet IDs and example.com fixtures. Keep actual outputs/results under ignored local/ and output/. Inspect meaning and behavior, not exact wording. Offline prompt cases require no live search or Sheet writes. One-time setup cases exercise only the explicitly supplied Sheet.
 
 ## Prompt generation
 
@@ -16,6 +16,17 @@ These are reproducible review scenarios, not a claim that any live scheduler has
 | No filesystem | Same complete input in a chat-only environment | Two downloads or clearly named copyable blocks; no assertion of a write to the user's computer |
 
 For every complete output: no unresolved {{...}} tokens, no local paths or “see other prompt” dependencies, no enclosing wrapper text; all required inputs embedded. Confirm weights total 100 and arithmetic once: ratings 80/70/100/90/60 with job weights 35/20/20/15/10 gives 81.5, rounded 82.
+
+## One-time setup
+
+- New Sheet with an unrelated Sheet1: create the three target tabs and exact headers, leaving Sheet1 untouched and adding no example business records. Verify readback before reporting ready.
+- Repeat against compatible tabs: plan zero mutations; preserve tab IDs, cell values and formatting.
+- Blank A1 but data/formulas lower down: do not classify the tab as empty; require schema clarification before changes.
+- Compatible headers reordered or with extra columns: reuse them and preserve all existing data; explicit aliases carry into both generated prompts.
+- Populated tab missing a required header or with duplicate names: ask about mapping/migration; do not overwrite.
+- No write tool or denied authorization: still deliver prompts with setup pending, name the connection blocker, and do not assert tabs were created.
+- Explicit generate-only/read-only: generate artifacts without spreadsheet mutation, even when a write connector is available.
+- Timeout after tab creation: reread metadata and headers before planning another write.
 
 ## Execution reasoning (synthetic, no network)
 

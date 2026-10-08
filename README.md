@@ -8,10 +8,10 @@ No Python installation or API key is needed to use this Markdown skill. You need
 
 1. Download this repository. Open it with your AI coding assistant, or upload `SKILL.md`, `profile-example.md`, both files in `templates/`, `references/google-sheet-contract.md`, and `tests/acceptance-cases.md` to a file-capable chat, keeping their names identifiable.
 2. Browse the [example profile](profile-example.md). Use it unchanged, edit a local copy, or describe your preferences in chat.
-3. Prepare a Google Sheet with **Companies**, **Open Jobs**, and **Runs** tabs. Copy the header lines from the [Sheet contract](references/google-sheet-contract.md) into A1 of each empty tab. Runs stores coverage and baseline receipts; no pre-existing company list is required.
+3. Provide a Google Sheet link; a new empty Sheet is enough. The AI checks it, creates **Companies**, **Open Jobs**, and **Runs** if missing, and adds headers to empty target tabs. Compatible existing data and unrelated tabs are preserved. Authorize a Sheet-capable connection if requested. No pre-existing company list is required.
 4. Ask your AI:
 
-   > Read SKILL.md and generate both scheduler prompts. Use the example profile. My Google Sheet is [paste your link]. Use Companies, Open Jobs and Runs as the tab names. Save the outputs in this project's output/ directory. Do not run the prompts yet.
+   > Read SKILL.md, prepare my Google Sheet, and generate both scheduler prompts. Use the example profile. My Google Sheet is [paste your link]. Use Companies, Open Jobs and Runs as the tab names. Save the outputs in this project's output/ directory. Do not run the searches or create schedules yet.
 
 5. Open the generated files and copy **each file's entire contents** into its own scheduler task. Complete the connection setup below before enabling recurring runs.
 
@@ -32,6 +32,8 @@ Paths are relative to this project's root, not the assistant's working directory
 
 No profile supplied? The AI uses the example and tells you. No Sheet link supplied? It can provide an explicitly labeled draft, but not a completed binding.
 
+The one-time setup is safe to repeat: already compatible tabs are reused without rewriting them. If an existing populated tab has incompatible headers, the AI asks how to map them. If the environment lacks a Sheet write tool or permission, prompts can still be generated with setup marked pending; connect an appropriate tool to complete setup. Manual [header preparation](references/google-sheet-contract.md#headers) is an optional fallback, not the normal workflow. An explicit generate-only request skips Sheet writes.
+
 ## What you can customize
 
 [profile-example.md](profile-example.md) is a readable, sanitized backend/cloud example: roughly 4 years of experience, Python/Terraform/AWS/database/ETL strengths, US roles, remote preferred and Houston as home area. It includes editable company preferences, scoring weights, role filters and alert thresholds. Unknown legal eligibility stays unknown.
@@ -43,7 +45,7 @@ Ask to regenerate both prompts after changing your profile, Sheet tabs or field 
 ## Connect and schedule
 
 1. Connect a Google Sheets-capable tool in the chat/environment where the tasks will run and authorize access to your Sheet. A URL or “anyone can edit” sharing setting does not install a write tool or grant a connector account access automatically. You do not need to make a private Sheet public.
-2. Verify the task environment can read the three tabs and their headers. If testing writes, use a clearly marked test tab and synthetic values first.
+2. The generation assistant reports that it created or reused the three tabs. Verify the actual task environment can read them using its own connection; setup in one chat does not grant another environment access.
 3. Create a company-discovery task with the full company prompt. Suggested default: **daily at 08:00 America/Chicago**.
 4. Create a job-discovery task with the full jobs prompt. Suggested default: **hourly**, using the same timezone. Run company discovery first so there are Active companies to scan.
 5. Review initial runs. Jobs performs an initial baseline without individual new-job alerts, then highlights new qualifying jobs. Every run returns a short chat summary; platform notification settings control push delivery.
@@ -76,7 +78,7 @@ Maintainers: use the [acceptance cases](tests/acceptance-cases.md) to review gen
 
 1. 下载整个项目，把文件交给 AI，并让它读取 `SKILL.md`。
 2. 浏览 `profile-example.md`：不提供个人资料时使用这个示例；也可以直接说出自己的岗位、技术、地点和公司偏好。
-3. 准备自己的 Google Sheet，按[表格约定](references/google-sheet-contract.md)创建 Companies、Open Jobs、Runs 三个 tab 并粘贴表头。
+3. 提供自己的 Google Sheet 链接，空表即可。AI 会自动检查并创建缺少的 Companies、Open Jobs、Runs tabs 和表头；已有兼容数据会保留，不需要手工粘贴。需要连接授权时，按提示完成即可。
 4. 把链接给 AI，让它生成两份 prompt。文件固定放在根目录的 `output/` 中，每份全文复制到一个 scheduler。
 5. 在真正运行任务的环境中连接并授权 Google Sheets。默认公司发现每天美中时间早上八点、职位发现每小时一次；频率可以修改。
 6. 修改个人偏好后，让 AI 重新生成两份文件，并替换定时任务中的旧 prompt。单独修改本地 profile 不会自动影响已经建立的任务。
