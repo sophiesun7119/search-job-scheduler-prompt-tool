@@ -17,6 +17,18 @@ These are reproducible review scenarios, not a claim that any live scheduler has
 
 For every complete output: no unresolved {{...}} tokens, no local paths or “see other prompt” dependencies, no enclosing wrapper text; all required inputs embedded. Confirm weights total 100 and arithmetic once: ratings 80/70/100/90/60 with job weights 35/20/20/15/10 gives 81.5, rounded 82.
 
+## Calibration with supplied prompts
+
+- 150 tracked companies and an excellent new candidate: no invented approval gate; may add under the 200 ceiling and per-run limit. At 200, report alternatives without silent removal.
+- Below 80 company with exceptional monitoring reason: do not mechanically force Watch solely from score; explain the chosen status.
+- Missing compensation/remote evidence: no automatic 50 or 0; qualify the evidence-based estimate or report unscored if fit cannot be assessed.
+- Job at a famous company: company quality is evidence-based, not automatically the saved company score; compensation remains part of the final 10% dimension.
+- Example skills include Python/database/ETL and multi-account/multi-region/GovCloud/FedRAMP; changing to frontend reconciles associated requirements rather than erasing all inherited context indiscriminately.
+- Company write: sort intact rows including extra/manual columns after material changes; no job-alert logic in the company prompt.
+- Job summary: exact hourly prefix and checked/total, blocked, not attempted, new, updates and closures; no-change text only after completed coverage and verified writes.
+- Current-source-only candidate: preserve source uncertainty; do not equate credible current evidence with official verification or automatically discard everything due to an inaccessible ATS.
+- Compare output with supplied prompts by behavior, list justified differences, and measure length. Do not claim semantic equivalence merely because weights and titles match.
+
 ## One-time setup
 
 - New Sheet with an unrelated Sheet1: create the three target tabs and exact headers, leaving Sheet1 untouched and adding no example business records. Verify readback before reporting ready.
@@ -35,11 +47,11 @@ Walk through the generated prompts with these inputs; record expected writes and
 - Same company domain discovered twice: one row; an existing Ignore and User Notes survive.
 - The same requisition returns with a tracking parameter or reopens: one Job Key, original First Seen/Review Status retained, no new-job highlight.
 - One known Closed/Applied/Skip row still participates in identity deduplication.
-- Three Active companies, one complete, one failed, one unattempted: target 3 = completed 1 + failed 1 + remaining 1; cannot claim no new jobs for all three. Next run still targets all Active, with unfinished companies first.
-- Partial initial scan: baseline remains incomplete and highlights suppressed until a full baseline completes.
-- An officially open role with unknown required authorization: Needs review; may be retained above the score floor, never highlighted as a confirmed eligible match.
+- Three Active companies, one complete, one failed, one unattempted: target 3 = completed 1 + failed 1 + remaining 1; cannot claim no new jobs for all three. Next run still targets all Active in the selected Tier/score/name order, without counting earlier scans.
+- Partial first run with a new Tier B score 88 role: save and highlight it under the example policy while reporting PARTIAL; no full-baseline prerequisite.
+- An otherwise matching new role with unknown required authorization: Needs review; may be highlighted at the threshold with the uncertainty stated, never asserted eligible. Known hard mismatch is excluded.
 - A company board times out or a job URL returns 404: no automatic Closed transition.
-- A saved job scores 88 in Tier B after baseline: highlight only if new, verified Open, Eligible and not already marked; readback confirms the write. Chat delivery remains separate from Sheet acknowledgement.
+- A saved new Tier B job scores 88: highlight if above threshold and not already marked, including first run; explicitly label uncertain eligibility/availability. A pre-existing re-scored 88 role is not new. Chat delivery is separate from Sheet acknowledgement.
 - Missing header or denied write: concrete setup/access blocker, no fabricated successful update; summary still returned.
 
 ## Bounded Sheet integration (only when authorized)

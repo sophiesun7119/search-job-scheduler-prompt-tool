@@ -1,44 +1,41 @@
 # Example profile
 
-Use this complete, editable example when no profile is supplied. These are personal preferences, not universal hiring standards. Override any section in plain language. Do not infer citizenship, work authorization, sponsorship needs, or clearance: all are unspecified.
+An editable backend/cloud job-search example. Use it when no personal profile is supplied and disclose that choice. Current user preferences override these defaults. Work authorization, citizenship, sponsorship needs and clearance are unspecified, not inferred.
 
-## Career and location
+## Career
 
-- About 4 years of experience; target mid-level to senior individual-contributor work.
-- Primary: software/backend, cloud, infrastructure, platform, distributed systems, data platform, developer infrastructure/productivity engineering.
-- Secondary: SRE, production engineering, DevOps and data engineering when software/backend work is substantial.
-- Strong technologies: Python, Terraform, AWS, databases, ETL. Relevant adjacent experience: distributed systems, data pipelines, Kubernetes/containers, CI/CD, infrastructure automation and reliability. Transferable skills count; not every technology is mandatory.
-- Normally exclude frontend-only, mobile-only, QA-only, support, solutions/sales engineering, management and unrelated specialist roles.
-- Ideal requirements: 3–7 years; consider 2–8; normally exclude explicit 10+ minimum requirements. Judge duties and actual minimum requirements, not seniority titles alone.
-- Target country: United States. Home area: Houston, Texas. Remote eligible from Houston preferred, not required; next Houston, Austin/other Texas, flexible hybrid elsewhere in the US, then other US locations.
-- Tier A companies may retain strong technical/career matches outside the preferred area. Never override an explicit legal, geographic or work-eligibility restriction.
-- Location ratings (editable example calibration, not eligibility): remote eligible from Houston 100; Houston nonremote 90; Austin/other Texas 75; flexible hybrid elsewhere in US 50; other US 25. No automatic Tier bonus to the numeric score.
+About 4 years of SWE experience; target mid-level to senior individual-contributor work. Ideal requirements 3–7 years, consider 2–8. SWE II with 2+ and Senior with 4–5+ can fit; normally exclude explicit 10+ minimums and clearly overleveled Staff/Principal, not titles alone.
 
-## Companies
+Strengths: Python, Terraform, AWS, databases, ETL, cloud/backend infrastructure, distributed systems, data platforms/pipelines, Kubernetes/containers, automation, CI/CD, multi-account/multi-region, GovCloud/FedRAMP, platform engineering and observability/reliability. Transferable skills count; this is not an all-keywords-required checklist.
 
-- Domains: cloud/backend infrastructure, distributed systems, databases, storage, streaming/data platforms, developer tools, CI/CD/DevOps, observability/reliability, cybersecurity/cloud security, networking/edge, Kubernetes, infrastructure as code, workflow systems, AI/inference infrastructure, GPU cloud and model serving.
-- Include major technology companies, established/midsize businesses and promising startups. No equal size quotas. Size is descriptive and independent of Tier.
-- Value engineering quality, technical ambition, compensation, remote friendliness, hiring/growth momentum, developer reputation, product quality and career value.
-- Avoid companies where engineering is peripheral, relevant roles are rare, or work is predominantly consulting/sales/support. Current zero openings does not alone remove future monitoring value.
-- Named favorites/exclusions: none.
-- Company score weights: role fit 25%, engineering 20%, compensation 20%, remote friendliness 15%, trajectory 10%, brand/career signal 10%.
-- Score bands: 90+ top monitoring priority; 80–89 strong target; below 80 watch. New companies scoring at least 80 become Active; below 80 become Watch only with a specific monitoring reason. Never overwrite an existing human-set status.
-- Aim for 120–150 worthwhile companies over multiple runs, without filling a quota with weak matches. After 150, prefer reviewing existing companies; surface exceptional additions in the summary for user approval. Add at most 5 per Tier per run; zero is valid.
+Primary: Software Engineer/SDE, Backend, Infrastructure, Platform, Cloud, Distributed Systems, Data Platform, Developer Infrastructure/Productivity. Secondary when technically aligned: SRE, Production Engineer, DevOps, Data Engineer. Normally exclude frontend-only, mobile-only, QA/test-only, support, solutions/sales engineering, management/directors, product management and unrelated specialists.
 
-## Jobs and alerts
+## Location
 
-- Job score weights: technical fit 35%, experience fit 20%, location fit 20%, company score 15%, career value 10%.
-- Retain confirmed open matches scoring at least 60. Bands: 85+ excellent, 75–84 strong, 60–74 possible.
-- Highlight newly saved, confirmed eligible jobs scoring at least 75 in Tier A or 85 in Tier B/C.
-- Unknown eligibility is explicitly Needs review, never asserted eligible or sent as a confirmed high-match alert.
-- No hard posting-age cutoff: discover unseen confirmed openings and retain official posting dates when available. “Newly found” does not mean “newly published.” The initial inventory is a baseline, summarized without individual new-job alerts.
+US roles; home Houston. Prefer Remote US eligible from Houston, then Houston/Texas/Austin, flexible/occasional hybrid, then other US locations. Remote is preferred, not mandatory. Exceptionally strong Tier A roles in Seattle, Bay Area, NYC or other US hubs may remain worthwhile. No invented numeric location ladder or automatic Tier bonus; an explicit hard eligibility restriction always takes precedence.
+
+## Company preferences
+
+Domains: cloud/backend infrastructure, distributed systems, databases, data/streaming/storage platforms, developer tools/infrastructure/productivity, platform engineering, CI/CD/DevOps, observability/reliability, cybersecurity/cloud security, networking/edge, Kubernetes/containers, infrastructure as code, orchestration/workflows, data pipelines, AI/inference infrastructure, GPU cloud and model serving.
+
+Start with compelling major engineering employers, then fill genuine technical/category gaps, including remote-first engineering, emerging infrastructure startups and strong late-stage startups/unicorns. Include all company sizes, without equal quotas. Prefer multiple signals in engineering quality, technical ambition, compensation, remote friendliness, hiring/growth momentum, product/developer reputation and career value. Avoid weak technical fit and businesses dominated by consulting, sales or support. No named favorites/exclusions.
+
+Company score weights: role fit 25%, engineering reputation 20%, compensation 20%, remote friendliness 15%, hiring/company trajectory 10%, brand/resume value 10%. Score means long-term monitoring value: 90+ top priority, 80–89 strong, below 80 usually Watch unless a compelling tracking reason warrants Active. Initialize strong worthwhile new targets as Active and marginal monitoring candidates as Watch; do not use score alone as a hard activation gate. Preserve existing human tracking choices and propose changes in the summary.
+
+Company pool target roughly 120–150; ceiling 200 tracked companies (Active + Watch), excluding Ignore. No approval gate at 150 and no weak additions to fill a quota. Stop earlier when coverage is good and marginal candidates are weak. At capacity, report worthwhile alternatives without removing companies automatically. Maximum 5 new qualified companies per Tier per run; zero is valid. Sort the whole company table after meaningful writes: Tier A/B/C, score descending, name A–Z.
+
+## Job preferences
+
+Job score means how worthwhile this particular role is to review/apply. Weights: technical/role fit 35%, experience fit 20%, location/remote 20%, company quality 15%, compensation/career value 10%. Tier and saved Company Score are evidence for company quality, not a compulsory direct numeric substitution. Prestige cannot compensate for poor role fit.
+
+Bands: 85+ excellent, 75–84 strong, 60–74 possible; below 60 normally omit new records. Highlight genuinely new Tier A roles at 75+, Tier B/C at 85+. First-run discoveries follow the same thresholds: no baseline silence. Unknown legal eligibility is Needs review, not assumed ineligible; otherwise worthwhile new roles may be highlighted with the uncertainty clearly stated. Known hard disqualifiers are excluded. No hard posting-age cutoff; newly found does not mean newly published.
 
 ## Scoring evidence
 
-- For a scored dimension with missing evidence, use 50/100 as a neutral placeholder and explicitly label it uncertain in the rationale. This editable convention is not a measured fact and never overrides hard eligibility.
+Assess weighted dimensions 0–100 from evidence and give brief reasons. Missing evidence means an explicitly uncertain estimate, not an automatic 50, zero or eligibility failure. Never fabricate facts; if the role/fit cannot meaningfully be assessed, report it for review without inventing a score or claiming a high match. Total weights must equal 100; round only the final weighted total.
 
-## Suggested schedules
+## Run preferences
 
-- Company discovery: daily at 08:00 America/Chicago.
-- Job discovery: hourly; each run targets all Active companies in batches and reports incomplete coverage.
-- Every run gives a short chat summary; highlight qualifying new jobs separately. Do not send email, Slack or other messages unless separately configured by the user.
+Companies: daily at 08:00 America/Chicago. Jobs: hourly in America/Chicago. Freshly attempt all current Active companies every run, Tier A/B/C then score descending then name. Previous runs do not count toward current coverage; no rotating subset or unfinished-first override. Batch as needed and report actual incomplete work.
+
+Always send a short summary to the same task chat, even on no change or failure. Job summary starts `Open Jobs hourly:` and includes checked/total, blocked, not attempted, new, updated and closed counts. Company summary includes category gaps, added/updated counts and important changes. No external messaging. Initial silence or stricter eligibility gates may be chosen by another user, but are not defaults.

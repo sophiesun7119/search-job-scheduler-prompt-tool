@@ -38,7 +38,7 @@ The one-time setup is safe to repeat: already compatible tabs are reused without
 
 [profile-example.md](profile-example.md) is a readable, sanitized backend/cloud example: roughly 4 years of experience, Python/Terraform/AWS/database/ETL strengths, US roles, remote preferred and Houston as home area. It includes editable company preferences, scoring weights, role filters and alert thresholds. Unknown legal eligibility stays unknown.
 
-Change the file or chat with the AI. Explicit preferences override saved profile settings; the example fills remaining gaps. Company size and Tier are separate. Score weights and numeric location ratings are editable examples, not objective hiring standards.
+Change the file or chat with the AI. Explicit preferences override saved profile settings; the example fills remaining gaps. Company size and Tier are separate. Score dimensions, weights, pool limits and notification policies are editable personal choices. Location is a preference order, not an invented numeric ladder; missing evidence does not automatically receive 50 points.
 
 Ask to regenerate both prompts after changing your profile, Sheet tabs or field mapping, then replace both scheduler prompts. Updating a local profile alone does not update existing schedules.
 
@@ -48,7 +48,7 @@ Ask to regenerate both prompts after changing your profile, Sheet tabs or field 
 2. The generation assistant reports that it created or reused the three tabs. Verify the actual task environment can read them using its own connection; setup in one chat does not grant another environment access.
 3. Create a company-discovery task with the full company prompt. Suggested default: **daily at 08:00 America/Chicago**.
 4. Create a job-discovery task with the full jobs prompt. Suggested default: **hourly**, using the same timezone. Run company discovery first so there are Active companies to scan.
-5. Review initial runs. Jobs performs an initial baseline without individual new-job alerts, then highlights new qualifying jobs. Every run returns a short chat summary; platform notification settings control push delivery.
+5. Review initial runs. Jobs highlights qualifying newly discovered roles from the first run, using the selected profile’s alert policy. Every run returns a short chat summary; platform notification settings control push delivery.
 
 In ChatGPT, use **Scheduled** to manage tasks and verify the prompt, time, timezone and connected tools. Web tasks can use tools available to their chat but cannot directly access your local repository. Availability depends on the environment and its permissions; successful generation does not establish unattended write access. See the [official scheduled-task documentation](https://learn.chatgpt.com/docs/automations).
 
@@ -56,11 +56,17 @@ The tool does not create schedules itself. No universal prompt-length limit is a
 
 ## How the two tasks cooperate
 
-- **Companies** stores company identity, priority Tier, personal score and tracking Status. New strong matches become Active under the example policy; you can change a company to Watch or Ignore, which subsequent runs preserve.
-- **Open Jobs** stores verified openings linked by Company ID, scores, evidence and your review decisions. “First Seen” is distinct from the employer's posting date.
-- **Runs** stores what each run actually completed. Jobs targets all Active companies each run and reports failures and unfinished companies. Large lists may exceed one run's capacity; it does not pretend that full coverage was achieved.
+- **Companies** stores company identity, priority Tier, personal score and tracking Status. New worthwhile targets become Active under the example policy; marginal targets usually become Watch, with compelling exceptions explained. Your existing tracking decisions are preserved. The whole company table is sorted after material updates.
+- **Open Jobs** stores matching openings with explicit verification status, linked by Company ID, scores, evidence and your review decisions. “First Seen” is distinct from the employer's posting date.
+- **Runs** stores what each run actually completed. It does not impose a baseline waiting period or change the next run’s priority order. Jobs targets all Active companies each run and reports failures and unfinished companies. Large lists may exceed one run's capacity; it does not pretend that full coverage was achieved.
 
-Both tasks deduplicate before writing and preserve human notes/statuses. A website failure is not evidence that a job closed. Baseline inventories, reopened roles and score changes are not newly discovered-job alerts. Sheet writes and chat delivery cannot guarantee exactly-once notifications.
+Both tasks deduplicate before writing and preserve human notes/statuses. A website failure is not evidence that a job closed. First-run discoveries use the normal alert thresholds; reopened roles and score changes are not new-job alerts. Unknown eligibility or unverified sources are labeled explicitly under the profile’s alert policy. Sheet writes and chat delivery cannot guarantee exactly-once notifications.
+
+## Consistent behavior, concise prompts
+
+The skill resolves preferences and execution policies before composing outputs. If you provide existing prompts, it compares selection, scoring, coverage and notifications, then explains intentional differences outside the generated files. Existing prompts are useful evidence, not mandatory templates. Each output contains only its own task's rules.
+
+The default schema keeps Category in company Notes, and readable company name/Tier/level in job Match Notes. It separates job availability from your review status and adds stable IDs and Runs receipts. Existing alternate schemas require an explicit mapping; prompt revision does not automatically migrate your Sheet. The example retains a 120–150 target with a 200-company ceiling, meaningful company sorting, all-Active job coverage and first-run alerts.
 
 ## Install as a skill (optional)
 

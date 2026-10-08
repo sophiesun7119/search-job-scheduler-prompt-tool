@@ -1,27 +1,21 @@
 # Find Companies
 
-Run one bounded company-discovery pass for the preferences below. Maintain a useful company watchlist in the bound Google Sheet. Do not search for individual jobs, apply, or create schedules.
-
-## Binding
+Maintain the company watchlist for future matching jobs. One discovery pass only; no job scan, applications or schedule changes.
 
 {{BINDING}}
 
-## Effective preferences
-
+## Preferences
 {{COMPANY_PROFILE}}
 
-## Shared storage and reporting rules
+## Storage
+{{COMPANY_STORAGE}}
 
-{{SHEET_CONTRACT}}
+## Discovery and result
 
-## Discovery
+Read populated Companies. Start with compelling major engineering employers, then fill real gaps across preferred technical categories, remote-first, emerging and late-stage companies. Recheck category gaps after the pass; avoid repeatedly adding to easy overrepresented categories. Ask whether this person would want to know if a strong matching role appeared tomorrow. Require a meaningful monitoring reason, preferably several; fame, size, rankings or current openings alone are insufficient. Zero openings alone is not exclusion.
 
-Read existing company identities, statuses and latest Companies receipt. Review coverage gaps across preferred domains and sizes. Discover candidates through credible sources, confirm official websites and careers links, then assess whether this person would want to know when a relevant role appears. Popularity, company size, or an opening alone is not sufficient. Zero current openings can still warrant monitoring.
+Confirm official careers links and company-to-ATS relationships. Prefer official careers/ATS links, product/engineering pages, remote policies and announcements. Reputable compensation/hiring/community sources are directional evidence: look for recurring themes, not isolated reviews. Distinguish facts, estimates and uncertainty; invent no compensation, culture, headcount or remote policy. Review missed/emerging companies and material remote/hiring/trajectory changes. Record concise category, fit, compensation, culture, caveats and confidence notes; culture is not an extra score dimension.
 
-Use official company/careers pages for current facts. Secondary sources can suggest leads or contextual evidence, but label unverified claims. Do not invent compensation, culture, headcount or remote eligibility. Company-wide remote friendliness does not establish any job's location eligibility.
+Apply profile scoring, Tier, status and pool policies. Deduplicate and batch only new rows/material updates and actual Last Checked; verify writes. After material writes, apply the profile's sort to the entire populated table INCLUDING extra/manual columns, excluding header. Keep rows intact; never sort one column. Skip sorting on no change. Preserve user decisions and propose changes in the summary.
 
-Assign Tier independently of size and numeric score. Rate each weighted dimension 0–100, then calculate sum(rating × weight)/100 and round once to the nearest integer. Weights must sum to 100. Use the effective profile's missing-evidence convention and label any uncertain dimension; do not present placeholders as measured facts. Record components, rationale and uncertainty. Apply the effective profile's bands, new-company status policy and per-run additions limit. Preserve human-set Status, especially Ignore. Never automatically reactivate ignored companies.
-
-Verify official careers URLs; if a page links to an external ATS, preserve the company-to-board relationship. Maintain concise evidence-backed notes. Work toward the profile's target without adding weak entries to meet a quota. Once the target is reached, prioritize material changes and new exceptional candidates within the stated policy.
-
-Write only confirmed changes; re-read to verify. Report discoveries in Tier A/B/C order, then Company Score descending and company name, without physically sorting user rows. Save a Companies receipt and return a short summary even with no changes. If tools, permissions or time prevent completion, name the blocker and unprocessed candidates. Never report an incomplete run as “no new companies.”
+Save the Companies receipt. COMPLETED requires all selected candidates assessed and needed writes verified; PARTIAL has unresolved candidates/writes; FAILED means no meaningful assessment. Always send a concise task-chat summary: outcome, category gaps, added/updated counts, important Tier/Score/Remote/status changes or recommendations. Completed no-change: explicitly say the company discovery scan completed with no additions or material updates. Otherwise state blockers and remaining work; zero additions alone is not success.

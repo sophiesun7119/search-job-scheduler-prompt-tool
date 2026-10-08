@@ -1,29 +1,27 @@
 # Find Jobs
 
-Run one bounded scan of tracked companies for matching open jobs using the preferences below. Update the bound Google Sheet and return a concise chat summary. Do not discover additional companies, apply, contact employers or create schedules.
-
-## Binding
+Find current matching jobs across tracked companies. One pass only; do not change Companies, apply, manage applications/email or change schedules.
 
 {{BINDING}}
 
-## Effective preferences
-
+## Preferences
 {{JOB_PROFILE}}
 
-## Shared storage and reporting rules
+## Storage
+{{JOB_STORAGE}}
 
-{{SHEET_CONTRACT}}
+## Fresh scan
 
-## Scan and match
+Read complete populated Companies/Open Jobs at start; derive current Active count N. Skip Watch/Ignore. Follow profile priority, freshly attempting ALL Active companies every run, including previously scanned companies and those with many/zero saved jobs. No rotation, sampling, historical-check credit or stopping after a find/write/Tier. Batch efficiently. N=0 permits a completed empty-roster run; say no Active companies, not no jobs.
 
-Read the current Active company snapshot, all existing job identities and the latest Jobs receipts. Ignore Watch and Ignore companies. If there are no Active companies, report that company discovery or activation is needed. Attempt unfinished Active companies first; otherwise prioritize Tier A/B/C, Company Score descending, then name. Every run targets ALL Active companies; batch within available capacity and record actual completion rather than silently switching to a rotating sample.
+Prefer official careers/ATS and bulk listings. Use fetch/link extraction for official routing; if unavailable, one targeted company-careers search, confirming the board on the official company domain. Current company-specific sources can support discovery. CHECKED requires meaningful current company-specific review, including zero matches; stored rows or broad snippets do not count. BLOCKED means inaccessible/insufficient evidence; NOT_ATTEMPTED means unsearched. Follow available pagination/details; known unfinished relevant pages are blocked, never claim exhaustive coverage beyond evidence.
 
-Follow each company's official careers link to its official listings/ATS, including pagination and job details. Where a fetch/extraction tool is available, use it for official routing rather than guessing providers. If the official route is unavailable, use at most one targeted company-careers search to find a route and verify the relationship on the company's official domain. A third-party search snippet alone is not current-open evidence. Report unavailable sources and incomplete detail checks.
+Search all matching families and continue after writes. Verify promising roles officially when practical. Credible current roles with blocked official access may be saved Unverified with source limits; do not call them confirmed Open or hide blocked coverage. Assess responsibilities, minimum experience, transferable skills and geographic restrictions, not titles/keyword counts alone. Exclude known hard mismatches; label unknown eligibility and follow profile alert policy. Score only meaningful new/changed roles, explain gaps/uncertainty, and do not invent facts or repeatedly rewrite unchanged scores. Deduplicate, batch new/material changes/confident closures, reread and preserve history.
 
-Evaluate actual responsibilities, minimum experience, technical transferability and location restrictions, not title or keyword counts alone. Remote can be country/state restricted. Reject explicit hard mismatches; record uncertain required eligibility as Needs review, without inferring personal work authorization. Retain such otherwise matching, officially open candidates for review but exclude them from confirmed high-match highlights.
+## Alerts and result
 
-Rate technical, experience, location, company and career dimensions 0–100 with brief reasons; use the profile's weights and any explicit rating anchors. The company component uses the saved Company Score. Use the profile's missing-evidence convention for an unknown scored dimension, label it uncertain, and never override a hard filter. Compute sum(rating × weight)/100 and round once. Retain matches meeting the configured score floor. Below-floor new candidates are not added; previously saved rows remain and may be updated without deleting user history.
+Apply profile thresholds and first-run policy to genuinely new saved roles. State uncertain eligibility/availability explicitly; never imply they are confirmed. Unchanged/reopened/re-scored roles are not new alerts. Recheck Alerted At to avoid duplicates; record the highlight timestamp for selected new roles and disclose any write/delivery failure. Interrupted delivery is uncertain: Sheet writes and chat delivery are not atomic.
 
-Preserve the official Posted At separately from First Seen. Never fabricate a posting date or call an undated newly found job newly published. Apply a posting-age cutoff only if explicitly present in the effective preferences. Verify current-open evidence before adding a role. For an existing job that can no longer be verified, mark Unverified with the reason rather than Closed without explicit closure evidence.
+COMPLETED requires checked=N, blocked=0, not_attempted=0 and verified necessary writes; PARTIAL has unresolved coverage/writes; FAILED means no meaningful scan. Save the Jobs receipt and always post a visible message in this same task chat, including no-change/failure. Do not disable the schedule; next run again attempts the full current Active roster.
 
-Deduplicate, update only changed owned fields, and read back. Follow baseline and alert rules exactly. A company with successful full coverage and zero qualifying jobs is completed; inaccessible or partially checked companies are not. Save a Jobs receipt with mutually exclusive completed/failed/remaining IDs and verified write counts. Return a short summary on every run, with qualifying new jobs separately highlighted, unresolved eligibility, failures and uncompleted coverage. Do not claim “no new jobs” across companies that were not successfully scanned.
+{{JOB_SUMMARY}}
