@@ -33,6 +33,10 @@ Use this complete, editable example when no profile is supplied. These are perso
 - Unknown eligibility is explicitly Needs review, never asserted eligible or sent as a confirmed high-match alert.
 - No hard posting-age cutoff: discover unseen confirmed openings and retain official posting dates when available. “Newly found” does not mean “newly published.” The initial inventory is a baseline, summarized without individual new-job alerts.
 
+## Scoring evidence
+
+- For a scored dimension with missing evidence, use 50/100 as a neutral placeholder and explicitly label it uncertain in the rationale. This editable convention is not a measured fact and never overrides hard eligibility.
+
 ## Suggested schedules
 
 - Company discovery: daily at 08:00 America/Chicago.
