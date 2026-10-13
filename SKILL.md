@@ -11,6 +11,8 @@ Deliver two self-contained prompts: discover companies, then discover jobs from 
 
 Explicit current preferences override a supplied saved profile, which overrides example defaults. Accept natural language. Preserve meaningful specifics (technologies, location exceptions, score meaning, notification conditions), not just broad job titles. Reconcile related rules when a user changes career/location. Do not infer citizenship, work authorization, sponsorship or clearance. Ask only about consequential contradictions or missing required inputs; disclose defaults for optional inputs.
 
+Before claiming compatibility with an existing scheduled workflow, read [runtime parity guide](references/runtime-parity-guide.md); compare saved prompts, current Sheet headers/values, logging and cadence. Document unresolved differences; do not auto-rewrite existing schedules or silently replace a rotating batch with full-roster scanning.
+
 ## Behavioral fidelity
 
 Separate personal preferences, execution policies and storage representation. A schema convenience must not silently change selection, ranking, coverage or alerts. For each generation resolve: role/technology/experience; hard constraints versus soft location preferences; company discovery/categories/Tiers; score dimensions and uncertainty; company limits/status/sorting; job identity/lifecycle; scan scope/order/completion; first-run and recurring alerts/summary. Keep the resolved policy in private local/profile.md; storage/timing in local/settings.md.

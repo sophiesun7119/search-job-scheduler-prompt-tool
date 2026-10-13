@@ -4,6 +4,10 @@ Turn your preferences and a Google Sheet link into **two complete scheduler prom
 
 No Python installation or API key is needed to use this Markdown skill. You need an AI that can read these files. Running the resulting tasks also requires web access and a Google Sheets connection with read/write capabilities in that task's environment.
 
+## Runtime compatibility notice
+
+This repository provides **generic starter prompts**, not a guaranteed match for a separately deployed schedule. If your live company statuses, tier-batch limits, Run logs or eligibility gates differ, inspect the [runtime parity guide](references/runtime-parity-guide.md) and the saved task prompts before regenerating or changing behavior. The default generator still assumes Active/Watch/Ignore and scans all Active companies per run; it does **not** implement cooldown reactivation or a 25-company rotating batch by default.
+
 ## Quick start
 
 1. Download this repository. Open it with your AI coding assistant, or upload `SKILL.md`, `profile-example.md`, both files in `templates/`, `references/google-sheet-contract.md`, and `tests/acceptance-cases.md` to a file-capable chat, keeping their names identifiable.
